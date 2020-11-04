@@ -1,6 +1,6 @@
 version: "3.8"
 services:
- ashuweb1:
+ htmlapp:
   image: aharikri/htmlapp:appv1
   container_name: anandwebcc11
   ports:
