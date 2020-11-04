@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: anandhtmlapp
+  name: anandhtmlapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anandhtmlapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: anandhtmlapp
+    spec:
+      containers:
+      - image: aharikri/htmlapp:appv1
+        name: htmlapp
+        resources: {}
+status: {}
