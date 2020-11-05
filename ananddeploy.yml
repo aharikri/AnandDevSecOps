@@ -1,3 +1,10 @@
+# creating namespace 
+apiVersion: v1
+kind: Namespace
+metadata:
+ name: anand-space
+# Below defenition is to deploy application in K8s cluster under anand-space name space. 
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -5,8 +12,9 @@ metadata:
   labels:
     app: anandhtmlapp
   name: anandhtmlapp
+  namespace: anand-space # using namespace to deploy application here
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: anandhtmlapp
@@ -22,3 +30,19 @@ spec:
         name: htmlapp
         resources: {}
 status: {}
+#Exposing deployment to create service so that endusers can access using ClusterIP with some port nuber
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: anand-svc-1 # name of service 
+ namespace: anand-space
+spec:
+ ports:
+ - name: webport
+   port: 1231
+   protocol: TCP
+   targetPort: 80 # it must be same as your original app port 
+ type: LoadBalancer 
+ selector: # use of selector to find the pod with below given labels / tag 
+  app: anandhtmlapp
