@@ -1,7 +1,7 @@
 version: "3.8"
 services:
  htmlapp:
-  image: aharikri/htmlapp:appv1
+  image: aharikri/htmlapp:appv2
   container_name: anandwebcc11
   ports:
   - "7511:80"
