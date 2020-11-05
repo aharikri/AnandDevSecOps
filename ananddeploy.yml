@@ -18,7 +18,7 @@ spec:
         app: anandhtmlapp
     spec:
       containers:
-      - image: aharikri/htmlapp:appv1
+      - image: aharikri/htmlapp:appv2
         name: htmlapp
         resources: {}
 status: {}
