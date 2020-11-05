@@ -12,7 +12,7 @@ metadata:
   labels:
     app: anandhtmlapp
   name: anandhtmlapp
-  namespace: anand-space # using namespace to deploy application here
+  namespace: anand-space # using namespace to deploy application here.
 spec:
   replicas: 3
   selector:
