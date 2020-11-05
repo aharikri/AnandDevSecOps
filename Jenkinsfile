@@ -23,6 +23,13 @@ stages {
                      
             }
         }    
+        stage( 'deploy war file in the local docker engine'){
+                steps {
+                        sh 'docker-compose down : docker-compose up -d'
+                        
+                      }
+        }
+                        
   }
 
 
